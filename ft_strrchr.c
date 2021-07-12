@@ -6,7 +6,7 @@
 /*   By: akliek <akliek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 13:45:06 by akliek            #+#    #+#             */
-/*   Updated: 2021/06/23 16:04:25 by akliek           ###   ########.fr       */
+/*   Updated: 2021/06/25 12:27:58 by akliek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ char	*ft_strrchr(const char *s, int c)
 	while (s[i])
 		i++;
 	if ((char)c == '\0')
-		return ("");
-	while (i-- >= 0)
+		return (&((char *)s)[i]);
+	while (*s && --i >= 0)
 		if (*(s + i) == (char)c)
 			return (&((char *)s)[i]);
 	return (NULL);

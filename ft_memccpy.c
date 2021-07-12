@@ -6,7 +6,7 @@
 /*   By: akliek <akliek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 13:44:14 by akliek            #+#    #+#             */
-/*   Updated: 2021/06/23 15:56:21 by akliek           ###   ########.fr       */
+/*   Updated: 2021/07/12 17:49:53 by akliek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	while (i < n)
 	{
 		dst_new[i] = src_new[i];
-		if (src_new[i] == (unsigned char)c)
+		if ((unsigned char)src_new[i] == (unsigned char)c)
 			return (&dst_new[i + 1]);
 		i++;
 	}

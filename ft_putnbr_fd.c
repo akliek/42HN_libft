@@ -6,7 +6,7 @@
 /*   By: akliek <akliek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 13:44:36 by akliek            #+#    #+#             */
-/*   Updated: 2021/06/23 15:59:45 by akliek           ###   ########.fr       */
+/*   Updated: 2021/06/24 18:06:51 by akliek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,20 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	*res;
+	char	res;
 
-	res = ft_itoa(n);
-	ft_putstr_fd(res, fd);
+	if (n == -2147483648)
+	{
+		write(fd, "-2147483648", 11);
+		return ;
+	}
+	if (n < 0)
+	{
+		write(fd, "-", 1);
+		n *= -1;
+	}
+	if (n > 9)
+		ft_putnbr_fd(n / 10, fd);
+	res = n % 10 + 48;
+	write(fd, &res, 1);
 }

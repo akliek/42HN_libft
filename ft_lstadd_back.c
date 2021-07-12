@@ -6,7 +6,7 @@
 /*   By: akliek <akliek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 13:43:39 by akliek            #+#    #+#             */
-/*   Updated: 2021/06/23 15:51:39 by akliek           ###   ########.fr       */
+/*   Updated: 2021/06/25 17:11:04 by akliek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list *res;
+	t_list	*res;
 
 	res = *lst;
 	if (!*lst)

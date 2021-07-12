@@ -6,7 +6,7 @@
 /*   By: akliek <akliek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 13:44:46 by akliek            #+#    #+#             */
-/*   Updated: 2021/06/23 16:03:04 by akliek           ###   ########.fr       */
+/*   Updated: 2021/06/24 19:12:58 by akliek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,14 @@ char	*ft_strdup(const char *s1)
 	int		i;
 
 	i = 0;
-	if (!s1)
+	res = (char *)malloc((ft_strlen(s1) + 1) * sizeof(char));
+	if (!res)
 		return (NULL);
-	res = (char *)malloc(ft_strlen(s1) * sizeof(char));
 	while (s1[i])
 	{
 		res[i] = s1[i];
 		i++;
 	}
+	res[i] = '\0';
 	return (res);
 }

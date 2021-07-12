@@ -6,7 +6,7 @@
 /*   By: akliek <akliek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 13:44:41 by akliek            #+#    #+#             */
-/*   Updated: 2021/06/23 18:40:19 by akliek           ###   ########.fr       */
+/*   Updated: 2021/06/28 10:41:20 by akliek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,15 @@
 
 static int	count_splits(char const *s, char c)
 {
-	int splits;
-	int check;
-	int i;
+	int		splits;
+	int		check;
+	int		i;
 
 	i = 0;
 	check = 0;
 	splits = 1;
+	if (!*s)
+		return (0);
 	while (s[i])
 	{
 		if (s[i] != c)
@@ -37,31 +39,29 @@ static int	count_splits(char const *s, char c)
 	return (splits);
 }
 
-static int	memory(char const *s, char c)
+static char	*memory(char const *s, char c, char *res)
 {
-	int i;
+	int		i;
+	int		j;
 
 	i = 0;
+	j = 0;
+	while (s[i] && s[i] != c)
+		i++;
+	res = (char *)malloc((i + 1) * sizeof(char));
+	if (!res)
+		return (NULL);
 	while (*s && *s != c)
 	{
-		i++;
+		res[j] = *s;
+		j++;
 		s++;
 	}
-	return (i);
+	res[j] = '\0';
+	return (res);
 }
 
-static char	*ft_strccpy(char const *s1, char *s2, char c)
-{
-	while (*s1 && *s1 != c)
-	{
-		*s2 = *s1;
-		s2++;
-		s1++;
-	}
-	return (s2);
-}
-
-char		**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**res;
 	int		j;
@@ -70,20 +70,22 @@ char		**ft_split(char const *s, char c)
 	j = 0;
 	if (!s)
 		return (NULL);
-	res = (char **)malloc(count_splits(s, c) * sizeof(char *) + 1);
 	splits = count_splits(s, c);
-	while (j < splits)
+	res = (char **)malloc((splits + 1) * sizeof(char *));
+	if (!res)
+		return (NULL);
+	while (*s && j < splits)
 	{
-		if (memory(s, c) > 0)
+		if (*s != c)
 		{
-			res[j] = (char *)malloc(memory(s, c) * sizeof(char));
-			ft_strccpy(s, res[j], c);
+			res[j] = memory(s, c, res[j]);
 			while (*s && *s != c)
 				s++;
 			j++;
 		}
-		while (*s == c)
+		while (*s && *s == c)
 			s++;
 	}
+	res[j] = NULL;
 	return (res);
 }

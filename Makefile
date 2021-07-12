@@ -6,7 +6,7 @@
 #    By: akliek <akliek@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/23 17:11:27 by akliek            #+#    #+#              #
-#    Updated: 2021/06/23 17:58:19 by akliek           ###   ########.fr        #
+#    Updated: 2021/06/24 18:59:02 by akliek           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -86,4 +86,5 @@ fclean: clean
 		rm -rf $(NAME)
 
 re:		
-		fclean all
+		make fclean
+		make all

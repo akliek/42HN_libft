@@ -6,7 +6,7 @@
 /*   By: akliek <akliek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 13:45:01 by akliek            #+#    #+#             */
-/*   Updated: 2021/06/23 16:04:02 by akliek           ###   ########.fr       */
+/*   Updated: 2021/06/24 18:10:27 by akliek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	size_t	i;
 
 	i = 0;
-	while (i < n)
+	while (((unsigned char)s1[i] || (unsigned char)s2[i]) && i < n)
 	{
 		if (s1[i] != s2[i])
 		{

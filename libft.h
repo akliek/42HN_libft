@@ -6,7 +6,7 @@
 /*   By: akliek <akliek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 13:46:02 by akliek            #+#    #+#             */
-/*   Updated: 2021/06/23 16:18:24 by akliek           ###   ########.fr       */
+/*   Updated: 2021/06/25 17:11:42 by akliek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <unistd.h>
 # include <mm_malloc.h>
 
-typedef struct		s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
@@ -24,23 +24,23 @@ typedef struct		s_list
 
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);
-void				*ft_memcpy(void *restrict dst,
-								const void *restrict src, size_t n);
-void				*ft_memccpy(void *restrict dst,
-								const void *restrict src, int c, size_t n);
+void				*ft_memcpy(void *dst,
+						const void *src, size_t n);
+void				*ft_memccpy(void *dst,
+						const void *src, int c, size_t n);
 void				*ft_memmove(void *dst, const void *src, size_t len);
 void				*ft_memchr(const void *s, int c, size_t n);
 int					ft_memcmp(const void *s1,
-								const void *s2, size_t n);
+						const void *s2, size_t n);
 size_t				ft_strlen(const char *s);
-size_t				ft_strlcpy(char *restrict dst,
-								const char *restrict src, size_t dstsize);
-size_t				ft_strlcat(char *restrict dst,
-								const char *restrict src, size_t dstsize);
+size_t				ft_strlcpy(char *dst,
+						const char *src, size_t dstsize);
+size_t				ft_strlcat(char *dst,
+						const char *src, size_t dstsize);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
 char				*ft_strnstr(const char *haystack,
-								const char *needl, size_t len);
+						const char *needl, size_t len);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 int					ft_atoi(const char *str);
 int					ft_isalpha(int c);
@@ -70,5 +70,7 @@ void				ft_lstadd_back(t_list **lst, t_list *new);
 void				ft_lstdelone(t_list *lst, void (*del)(void *));
 void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
+t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
+						void (*del)(void *));
 
 #endif
