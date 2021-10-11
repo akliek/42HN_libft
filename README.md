@@ -85,8 +85,8 @@ Additional functions:
         #2. The reference set of characters to trim.
       - Return value: the trimmed string, NULL if the allocation fails.
       - External functions: malloc
-      - Description: Allocates (with malloc(3)) and returns a copy of ’s1’ with the characters specified in ’set’
-        removed from the beginning and the end of the string.
+      - Description: Allocates (with malloc(3)) and returns a copy of ’s1’ with the
+        characters specified in ’set’ removed from the beginning and the end of the string.
   • ft_split
       - Prototype: char **ft_split(char const *s, char c);
       - Parameters:
@@ -94,16 +94,16 @@ Additional functions:
         #2. The delimiter character.
       - Return value: the array of new strings resulting from the split, NULL if the allocation fails.
       - External functions: malloc, free
-      - Description: Allocates (with malloc(3)) and returns an array of strings obtained by splitting ’s’
-        using the character ’c’ as a delimiter. The array must be ended by a NULL pointer.
+      - Description: Allocates (with malloc(3)) and returns an array of strings obtained by
+        splitting ’s’ using the character ’c’ as a delimiter. The array must be ended by a NULL pointer.
   • ft_itoa
       - Prototype: char *ft_itoa(int n);
       - Parameters:
         #1. the integer to convert.
       - Return value: the string representing the integer, NULL if the allocation fails.
       - External functions: malloc
-      - Description: Allocates (with malloc(3)) and returns a string representing the integer received as an argument.
-        Negative numbers must be handled.
+      - Description: Allocates (with malloc(3)) and returns a string representing the integer received
+        as an argument. Negative numbers must be handled.
   • ft_strmapi
       - Prototype: char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
       - Parameters:
