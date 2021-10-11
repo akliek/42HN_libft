@@ -92,18 +92,20 @@ Additional functions:
       - Parameters:
         #1. The string to be split.
         #2. The delimiter character.
-      - Return value: the array of new strings resulting from the split, NULL if the allocation fails.
+      - Return value: the array of new strings resulting from the split,
+        NULL if the allocation fails.
       - External functions: malloc, free
       - Description: Allocates (with malloc(3)) and returns an array of strings obtained by
-        splitting ’s’ using the character ’c’ as a delimiter. The array must be ended by a NULL pointer.
+        splitting ’s’ using the character ’c’ as a delimiter.
+        The array must be ended by a NULL pointer.
   • ft_itoa
       - Prototype: char *ft_itoa(int n);
       - Parameters:
         #1. the integer to convert.
       - Return value: the string representing the integer, NULL if the allocation fails.
       - External functions: malloc
-      - Description: Allocates (with malloc(3)) and returns a string representing the integer
-        received as an argument. Negative numbers must be handled.
+      - Description: Allocates (with malloc(3)) and returns a string representing
+        the integer received as an argument. Negative numbers must be handled.
   • ft_strmapi
       - Prototype: char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
       - Parameters:
@@ -122,8 +124,9 @@ Additional functions:
         #2. The file descriptor on which to write.
       - Return value: NONE
       - External functions: write
-      - Description: Allocates (with malloc(3)) and returns an array of strings obtained by splitting ’s’
-        using the character ’c’ as a delimiter. The array must be ended by a NULL pointer.
+      - Description: Allocates (with malloc(3)) and returns an array of strings obtained
+        by splitting ’s’ using the character ’c’ as a delimiter.
+        The array must be ended by a NULL pointer.
   • ft_putstr_fd
       - Prototype: void ft_putstr_fd(char *s, int fd);
       - Parameters:
@@ -139,7 +142,8 @@ Additional functions:
         #2. The file descriptor on which to write.
       - Return value: NONE
       - External functions: write
-      - Description: Outputs the string ’s’ to the given file descriptor, followed by a newline.
+      - Description: Outputs the string ’s’ to the given file descriptor,
+        followed by a newline.
   • ft_putnbr_fd
       - Prototype: void ft_putnbr_fd(int n, int fd);
       - Parameters:
@@ -214,7 +218,8 @@ Additional functions:
         #2. The adress of the function used to iterate on the list.
       - Return value: NONE
       - External functions: NONE
-      - Description: Iterates the list ’lst’ and applies the function ’f’ to the content of each element.
+      - Description: Iterates the list ’lst’ and applies the function ’f’ to the content of
+        each element.
   • ft_lstmap
       - Prototype: t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
       - Parameters:
@@ -223,7 +228,7 @@ Additional functions:
         #3. The adress of the function used to delete the content of an element if needed.
       - Return value: The new list. NULL if the allocation fails.
       - External functions: malloc, free
-      - Description: Iterates the list ’lst’ and applies the function ’f’ to the content of each element.
-        Creates a new list resulting of the successive applications of the function ’f’.
+      - Description: Iterates the list ’lst’ and applies the function ’f’ to the content of each
+        element. Creates a new list resulting of the successive applications of the function ’f’.
         The ’del’ function is used to delete the content of an element if needed.
 ```
