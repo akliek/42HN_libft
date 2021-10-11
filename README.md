@@ -102,8 +102,8 @@ Additional functions:
         #1. the integer to convert.
       - Return value: the string representing the integer, NULL if the allocation fails.
       - External functions: malloc
-      - Description: Allocates (with malloc(3)) and returns a string representing the integer received
-        as an argument. Negative numbers must be handled.
+      - Description: Allocates (with malloc(3)) and returns a string representing the integer
+        received as an argument. Negative numbers must be handled.
   • ft_strmapi
       - Prototype: char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
       - Parameters:
